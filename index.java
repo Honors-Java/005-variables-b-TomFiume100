@@ -1,37 +1,34 @@
 int rectX = 0;
-int rectSize = 500;
-int circleX = rectSize/2;
-int circleSize = 200;
-int color = 200;
-int color2 = 50;
+int rectY = 10;
+int rectWidth = 200;
+int rectHeight = 300;
+int circleSize = 10;
+int color = 150;
+int color2 = 0;
+int color3 = 0;
 
 void setup() {
-	size(500, 500);
+	size(350, 350);
+  frameRate(30);
 }
 
 void draw() {
-// Step 1: Write code that draws the following screenshots 
-// with hard-coded values. (Feel free to use colors 
-// instead of grayscale.)
-
-// Step 2: Replace all of the hard-coded numbers with 
-// variables.
-
-// Step 3: Write assignment operations in draw() that 
-// change the value of the variables.
-// For example, “variable1 = variable1 + 2;”. 
-
-// Step 4: Make it so when the program runs the ball slides off the screen exiting at the point (500, 500)
-  circleX = circleX + 1;
-  background(255);
   stroke(0);
-  fill(color,0,0);
-  rect(rectX,rectX,rectSize,rectSize);
-  fill(color2,0,0)
-  ellipse(circleX,circleX,circleSize,circleSize);
+  fill(color,color2,color3);
+  rect(rectX,rectY,rectWidth,rectHeight);
+
+  fill((int) random(0,255),(int)random(0,255),(int) random(0,255));
+  ellipse(mouseX + (int)random(1,50) ,mouseY + (int)random(1,50),circleSize,circleSize);
   
+}
 
-
-  
-
+void mousePressed() {
+  color =  random(0,255);
+  color2 =  random(0,255);
+  color3 =  random(0,255);
+  background(255);
+  rectX =  random(0,250);
+  rectY = random(0,250);
+  rectWidth =  random(0,250);
+  rectHeight = random(0,250);
 }
